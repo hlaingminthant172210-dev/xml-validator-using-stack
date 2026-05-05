@@ -12,7 +12,7 @@ This program checks whether an XML file has correct opening and closing tags usi
 ---
 
 ## How It Works
-1. The program opens and reads the file `test.xml`.
+1. The program opens and reads the file `note.xml`.
 2. It reads the file character by character.
 3. When it finds `<`, it starts reading a full tag until `>` is found.
 4. The extracted tag is stored in a string.
