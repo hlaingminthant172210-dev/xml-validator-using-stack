@@ -1,105 +1,65 @@
-XML Tag Validator using Stack (C Language)
-Overview
+# XML Tag Validator using Stack (C Language)
 
-This program checks whether an XML file has properly matched opening and closing tags.
+## Overview
+This program checks whether an XML file has correct opening and closing tags using a stack data structure.
 
-It uses a stack (linked list implementation) to ensure:
+## Features
+- Reads XML file
+- Checks matching tags
+- Uses stack (linked list implementation)
+- Displays Valid or Invalid XML
 
-Every opening tag <tag> has a matching closing tag </tag>
-Tags are closed in the correct order (LIFO principle)
-Objective
-Practice Data Structures (Stack)
-Understand file handling in C
-Learn string processing
-Apply LIFO (Last In First Out) concept
-How the Program Works
-Open the XML file (test.xml)
-Read the file character by character
-When < is found, read the full tag until >
-If it is an opening tag, push it into the stack
-If it is a closing tag, pop from the stack and compare
-After reading the file:
-If stack is empty → Valid XML
-Otherwise → Invalid XML
-Data Structure Used
-Stack (Linked List)
+---
 
-Each node stores:
+## How It Works
+1. The program opens and reads the file `test.xml`.
+2. It reads the file character by character.
+3. When it finds `<`, it starts reading a full tag until `>` is found.
+4. The extracted tag is stored in a string.
+5. If the tag is an opening tag (example: `<a>`):
+   - It is pushed into the stack.
+6. If the tag is a closing tag (example: `</a>`):
+   - The program pops the top element from the stack.
+   - It compares both tags (opening and closing).
+7. If they match, the program continues.
+8. If they do not match, the XML is invalid.
+9. After finishing the file:
+   - If the stack is empty → XML is valid
+   - If the stack is not empty → XML is invalid
 
-A tag (string)
-Pointer to next node
+---
 
-Top → "b" → "a" → NULL
+## How to Run
 
-Key Functions
-initStack()
-
-Initializes an empty stack
-
-push(Stack S, char *tag)
-
-Adds a tag to the stack
-
-pop(Stack S)
-
-Removes the top tag from the stack
-
-empty(Stack S)
-
-Checks whether the stack is empty
-
-How to Run
-Compile
+### Compile
 gcc main.c -o xml_validator
-Run
-./xml_validator
-Input File
 
-Create a file named test.xml in the same directory.
+### Run
+./xml_validator
+
+### Input File
+Create a file named `test.xml` in the same folder.
 
 Example:
-
 <a>
   <b></b>
 </a>
-Example Input
-Valid XML
-<a>
-  <b></b>
-</a>
-Invalid XML
-<a>
-  <b>
-</a>
-Output
 
-Valid XML
+---
 
-or
-
+## Output
+Valid XML  
+or  
 Invalid XML
 
-Limitations
-Does not support attributes (<a id="1">)
-Does not support self-closing tags (<br/>)
-Fixed tag size limitation
-Assumes properly formatted XML
-Future Improvements
-Support attributes in tags
-Handle self-closing tags
-Improve error reporting with position tracking
-Use dynamic memory for scalability
-Key Concepts Learned
-Stack (Linked List implementation)
-File handling in C
-String manipulation (strcpy, strcmp)
-XML parsing basics
-LIFO principle
-Author
-Name: Hlaing Min Thant
-Course: Data Structures (DSA)
-Language: C
+---
 
-Conclusion
+## Limitations
+- Does not support attributes like `<a id="1">`
+- Does not support self-closing tags like `<br/>`
+- Fixed tag size in memory
 
-This project demonstrates how a stack data structure can be used to validate XML structure by ensuring correct nesting and ordering of tags.
+---
+
+## Conclusion
+This program uses a stack to ensure correct XML tag structure by matching opening and closing tags in the correct order.
