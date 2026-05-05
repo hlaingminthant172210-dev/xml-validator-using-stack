@@ -38,7 +38,7 @@ gcc main.c -o xml_validator
 ./xml_validator
 
 ### Input File
-Create a file named `test.xml` in the same folder.
+Create a file named `note.xml` in the same folder.
 
 Example:
 <a>
